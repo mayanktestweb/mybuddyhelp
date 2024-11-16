@@ -8,6 +8,7 @@ import Notifications from './pages/Notifications'
 import Profile from './pages/Profile'
 import ActivityCategoriesPage from './pages/ActivityCategoriesPage'
 import ActivityCategoryPage from './pages/ActivityCategoryPage'
+import CreateExpressionView from './pages/CreateExpression'
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='profile' element={<Profile />} />
       </Route>
       <Route path='/activity_category/:category' element={<ActivityCategoryPage />} />
+      <Route path='/create_expression' element={<CreateExpressionView />} />
     </Routes>
   )
 }

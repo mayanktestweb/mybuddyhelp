@@ -34,7 +34,7 @@ const BottomNav = () => {
           ) : (
             <div key="center" className="relative -top-4">
               <button 
-                onClick={() => navigate('/create')}
+                onClick={() => navigate('/create_expression')}
                 className="bg-red-500 rounded-full p-4 shadow-lg hover:bg-red-600"
               >
                 <Plus size={24} color="white" />
