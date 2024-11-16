@@ -7,6 +7,7 @@ import Buddies from './pages/Buddies'
 import Notifications from './pages/Notifications'
 import Profile from './pages/Profile'
 import ActivityCategoriesPage from './pages/ActivityCategoriesPage'
+import ActivityCategoryPage from './pages/ActivityCategoryPage'
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='notifications' element={<Notifications />} />
         <Route path='profile' element={<Profile />} />
       </Route>
+      <Route path='/activity_category/:category' element={<ActivityCategoryPage />} />
     </Routes>
   )
 }

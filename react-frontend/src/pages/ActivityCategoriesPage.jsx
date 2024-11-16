@@ -1,8 +1,9 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import BottomNav from '../components/BottomNav';
+import { useNavigate } from 'react-router-dom';
 
-const ActivityCategoryCard = ({ title, score, imageUrl }) => (
+const ActivityCategoryCard = ({ title, score, imageUrl, onClick }) => (
   <div className="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
     <div className="flex h-32">
       {/* Image Area - Full height, no padding */}
@@ -21,7 +22,7 @@ const ActivityCategoryCard = ({ title, score, imageUrl }) => (
         
         {/* See Today's Activities Link */}
         <div className="mt-auto flex justify-end">
-          <button className="text-red-500 text-sm font-medium flex items-center hover:text-red-600">
+          <button onClick={onClick} className="text-red-500 text-sm font-medium flex items-center hover:text-red-600">
             See Today's Activities
             <ArrowRight size={16} className="ml-1" />
           </button>
@@ -32,24 +33,31 @@ const ActivityCategoryCard = ({ title, score, imageUrl }) => (
 );
 
 const ActivityCategoriesPage = () => {
+
+  const navigate = useNavigate();
+
   const activities = [
     {
       title: "Exercise",
+      link: 'exercise',
       score: "150 pts",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSajvciv-52WyA0Un6eQIw78CAJgD67rgweA&s"
     },
     {
       title: "Healthy Meal Planning",
+      link: 'meal',
       score: "200 pts",
       imageUrl: "https://svgsilh.com/svg/2085075.svg"
     },
     {
       title: "Hobbies And Fun",
+      link: 'hobby',
       score: "100 pts",
       imageUrl: "https://cdn.iconscout.com/icon/premium/png-256-thumb/hobbies-1651245-1403352.png?f=webp&w=256"
     },
     {
       title: "Sleeping Routines",
+      link: 'sleeping',
       score: "120 pts",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ZM0h9kWNfSvtrnzOlls5uTyicMnvjwgBuw&s"
     }
@@ -68,10 +76,11 @@ const ActivityCategoriesPage = () => {
             <div className="p-4">
                 {activities.map((activity, index) => (
                     <ActivityCategoryCard 
-                    key={index}
-                    title={activity.title}
-                    score={activity.score}
-                    imageUrl={activity.imageUrl}
+                      key={index}
+                      title={activity.title}
+                      score={activity.score}
+                      imageUrl={activity.imageUrl}
+                      onClick={() => navigate(`/activity_category/${activity.link}`)}
                     />
                 ))}
             </div>
