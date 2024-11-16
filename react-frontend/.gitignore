@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Remove below section later on
+src/pages/PushNotification.jsx

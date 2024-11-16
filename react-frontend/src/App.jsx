@@ -11,6 +11,9 @@ import ActivityCategoryPage from './pages/ActivityCategoryPage'
 import CreateExpressionView from './pages/CreateExpression'
 
 
+import PushNotification from './pages/PushNotification'
+
+
 
 const App = () => {
   const location = useLocation();
@@ -29,5 +32,6 @@ const App = () => {
     </Routes>
   )
 }
+
 
 export default App
